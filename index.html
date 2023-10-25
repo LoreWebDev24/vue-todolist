@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-12">
                     <ul v-if="todos.length > 0">
-                        <li class="task" v-for="(todo,index) in todos" :key="index">
+                        <li class="task" v-for="(todo,index) in todos" :key="index" @click="taskDone(index)" :class="{'task-done': todo.done}">
                             {{todo.text}}
                             <i @click.stop="removeTask(index)" class="fa-solid fa-xmark"></i>
                         </li>

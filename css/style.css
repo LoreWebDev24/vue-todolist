@@ -79,6 +79,11 @@ button {
     font-weight: 600 ;
 }
 
+.task-done {
+    text-decoration: line-through;
+    background-color: lightgreen;
+}
+
 small {
     color: red;
 }

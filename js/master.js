@@ -26,6 +26,11 @@ createApp({
         },
         removeTask(){
             this.todos.splice(this.newTaskObj,1)
+        },
+        taskDone(itemIndex){
+            
+            this.todos[itemIndex].done = !this.todos[itemIndex].done;
+
         }
 
     },
