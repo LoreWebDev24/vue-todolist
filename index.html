@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-todolist</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
+    integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=='
+    crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img :src="logoPath" alt="">
+                </div>
+                <div class="col-12 new-task">
+                    <input type="text" placeholder="Insert Task" v-model="newTask">
+                    <button @click="addTask()">Create Task</button>
+                    <div v-if="error" class="error">
+                        <small>Inserisci una task di Almeno 5 Caratteri</small>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ul v-if="todos.length > 1">
+                        <li class="task" v-for="(todo,index) in todos" :key="index">
+                            {{todos[index].text}}
+                            <i class="fa-solid fa-xmark"></i>
+                        </li>
+                    </ul>
+                    <h2 v-else>Non Ci Sono Task da Fare</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/master.js"></script>
+</body>
+</html>
