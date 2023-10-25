@@ -13,7 +13,7 @@ createApp({
     methods: {
         addTask(){
             let newTaskTrimmed = this.newTask.trim()
-            if(newTaskTrimmed.length >= 5 && newTaskTrimmed != '' ) {
+            if(newTaskTrimmed.length >= 5) {
                 const newTaskObj = {
                     text: newTaskTrimmed,
                     done: false,
