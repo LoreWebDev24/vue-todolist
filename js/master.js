@@ -12,9 +12,10 @@ createApp({
     },
     methods: {
         addTask(){
-            if(this.newTask.length >= 5) {
+            let newTaskTrimmed = this.newTask.trim()
+            if(newTaskTrimmed.length >= 5 && newTaskTrimmed != '' ) {
                 const newTaskObj = {
-                    text: this.newTask,
+                    text: newTaskTrimmed,
                     done: false,
                 };
                 this.todos.unshift(newTaskObj);
