@@ -25,10 +25,10 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <ul v-if="todos.length > 1">
+                    <ul v-if="todos.length > 0">
                         <li class="task" v-for="(todo,index) in todos" :key="index">
-                            {{todos[index].text}}
-                            <i class="fa-solid fa-xmark"></i>
+                            {{todo.text}}
+                            <i @click.stop="removeTask(index)" class="fa-solid fa-xmark"></i>
                         </li>
                     </ul>
                     <h2 v-else>Non Ci Sono Task da Fare</h2>

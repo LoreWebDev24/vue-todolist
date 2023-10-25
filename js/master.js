@@ -7,27 +7,30 @@ createApp({
             newTask: '',
             error: false,
             todos: [
-                {
-                    text: '',
-                    done: false
-                },
             ]
         }
     },
     methods: {
         addTask(){
             if(this.newTask.length >= 5) {
-                this.todos.unshift(this.newTask)
-                this.newTask = ''
-                this.error = false
+                const newTaskObj = {
+                    text: this.newTask,
+                    done: false,
+                };
+                this.todos.unshift(newTaskObj);
+                this.newTask = '';
+                this.error = false;
             }else {
-                this.error = true
+                this.error = true;
             }
+        },
+        removeTask(){
+            this.todos.splice(index,1)
         }
 
     },
     mounted() {
-    console.log('Vue Kappa')
+    console.log('Vue Kappa');
     }
 }).mount('#app');
 
