@@ -16,7 +16,10 @@ img {
 }
 
 body {
-    padding :20px
+    padding :20px;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: lightgrey;
 }
 
 .container {
@@ -49,8 +52,13 @@ body {
     width: 400px;
     text-align: center;
     padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600 ;
 }
 
 small {
