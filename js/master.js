@@ -25,7 +25,7 @@ createApp({
             }
         },
         removeTask(){
-            this.todos.splice(index,1)
+            this.todos.splice(this.newTaskObj,1)
         }
 
     },
